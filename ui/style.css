@@ -22,9 +22,9 @@ body {
  .container{
             margin: 0 auto;
             max-width:800px;
-            font-style:sans-serif;
+            font-style:italic;
             color: #ff0016;
             padding-top: 50px;
             padding-left: 100px;
             padding-right: 100px
-        } 
+} 
