@@ -10,8 +10,6 @@ var Article1 ={
     heading: 'Articleone',
     date : 'Aug 19th',
     content : `<div>
-                <a href = "/"> Home </a> 
-                <div>
                 <p> This is my first article... This is my first article... This is my first article...  </p>    
                 </div> 
                 <div>
@@ -28,7 +26,6 @@ var title = dataobject.title;
 var heading = dataobject.heading;
 var date = dataobject.date;
 var content = dataobject.content;
-
 var HTMLtemplate =
     `<html>
         <head>
@@ -36,19 +33,23 @@ var HTMLtemplate =
             ${title}
             </title>
             <meta name = "viewport" content = "width=device-width initial-scale=1" /> 
-            <div class = "container" >
             <link href="/ui/style.css" rel="stylesheet" />
-            </div>
+            
         </head>
     <body>
-        <h3>
-        ${heading}
-        </h3>
-        <div>
-        ${date}
-        </div>
-        <div>
-        ${content}
+        <div class = container >
+            <div>
+                <a href = "/"> Home </a> 
+            </div>
+            <h3>
+            ${heading}
+            </h3>
+            <div>
+            ${date}
+            </div>
+            <div>
+            ${content}
+            </div>
         </div>
     </body>
 </html>`;
