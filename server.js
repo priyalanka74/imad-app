@@ -5,22 +5,53 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var Article1 ={
-    title :'Article1 , Supriya',
-    heading: 'Articleone',
-    date : 'Aug 19th',
-    content : `<div>
-                <p> This is my first article... This is my first article... This is my first article...  </p>    
+var articles={
+    'article-One':{
+        title :'Article1 , Supriya',
+        heading: 'Articleone',
+        date : 'Aug 19th',
+        content : `<div>
+                    <p> This is my first article... This is my first article... This is my first article...  </p>    
+                    </div> 
+                    <div>
+                    <p> This is my first article... This is my first article... This is my first article...  </p>    
+                    </div> 
+                    <div>
+                    <p> This is my first article... This is my first article... This is my first article...  </p>    
+                    </div> 
+                    </div>`
+    },
+    'article-Two':{
+        title :'Article2 , Supriya',
+        heading: 'Article Two',
+        date : 'Aug 19th',
+        content : `<div>
+                <p> This is my Second  article... This is my first article... This is my first article...  </p>    
                 </div> 
                 <div>
-                <p> This is my first article... This is my first article... This is my first article...  </p>    
+                <p> This is my second article... This is my first article... This is my first article...  </p>    
                 </div> 
                 <div>
-                <p> This is my first article... This is my first article... This is my first article...  </p>    
+                <p> This is my second article... This is my first article... This is my first article...  </p>    
                 </div> 
                 </div>`
-};
-    
+    },
+    'article-Three':{
+        title :'Article3 , Supriya',
+        heading: 'Articlethree',
+        date : 'Aug 19th',
+        content : `<div>
+                    <p> This is my third article... This is my first article... This is my first article...  </p>    
+                    </div> 
+                    <div>
+                    <p> This is my third article... This is my first article... This is my first article...  </p>    
+                    </div> 
+                    <div>
+                    <p> This is my third article... This is my first article... This is my first article...  </p>    
+                    </div> 
+                    </div>`
+    }
+};    
 function createTemplate(dataobject){
 var title = dataobject.title;
 var heading = dataobject.heading;
@@ -59,9 +90,12 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-//app.get('/ui/style.css', function (req, res) {
-app.get('/article-one', function (req, res){
-  res.send(createTemplate(Article1));
+app.get('/ui/style.css', function (req, res) {
+      res.sendFile(path.join(__dirname, 'ui', 'style.css'));
+});
+app.get('/:articleName', function (req, res){
+    var articleName = req.params.articleName;
+  res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/article-two', function (req, res){
