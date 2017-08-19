@@ -37,7 +37,7 @@ var HTMLtemplate =
             </title>
             <meta name = "viewport" content = "width=device-width initial-scale=1" /> 
             <div class = "container" >
-            <link href="/ui/style.css" rel="stylesheet"/>
+            <link href="/ui/style.css" rel="stylesheet" />
             </div>
         </head>
     <body>
