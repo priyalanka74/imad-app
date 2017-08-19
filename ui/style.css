@@ -1,4 +1,4 @@
-body {
+/*body {
     font-family: sans-serif;
     background-color: lightgrey;
     margin-top: 75px;
@@ -18,13 +18,13 @@ body {
 
 .img-medium {
     height: 200px;
-}
+}*/
  .container{
             margin: 0 auto;
             max-width:800px;
             color: #ff0016;
             font-style:oblique;
             padding-top: 50px;
-            padding-left: 100px;
-            padding-right: 100px
+            padding-left: 300px;
+            padding-right: 300px
 } 
