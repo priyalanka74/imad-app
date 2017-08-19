@@ -36,11 +36,11 @@ var HTMLtemplate =
             ${title}
             </title>
             <meta name = "viewport" content = "width=device-width initial-scale=1" /> 
+            <div class = "container" >
+            <link href="/ui/style.css" rel="stylesheet"/>
+            </div>
         </head>
     <body>
-        <div class = "container" >
-        <link href="/ui/style.css" rel="stylesheet"/>
-        </div>
         <h3>
         ${heading}
         </h3>
