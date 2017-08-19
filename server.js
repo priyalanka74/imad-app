@@ -7,7 +7,7 @@ app.use(morgan('combined'));
 
 var Article1 ={
     title :'Article1 , Supriya',
-    heading: 'Article one',
+    heading: 'Articleone',
     date : 'Aug 19th',
     content : `<div>
                 <a href = "/"> Home </a> 
