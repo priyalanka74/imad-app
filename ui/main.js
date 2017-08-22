@@ -3,11 +3,11 @@ var element=document.getElementById('main-text');
 element.innerHTML = "New Test Value";
 
 var img = document.getElementById('madi');
-var marginleft = 0;
+var marginLeft = 0;
 function moveRight(){
-    marginleft = marginleft+10;
-    img.style.marginleft = marginleft+'px';
+    marginLeft = marginLeft+10;
+    img.style.marginLeft = marginLeft+'px';
 }
 img.onclick= function(){
-var interval = setinterval(moveRight,50);
+var interval = setInterval(moveRight, 50);
 };
