@@ -4,6 +4,14 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
+var pool = require('pg').pool;
+var config = {
+    user: 'supriyat',
+    database: 'supriyat',
+    host: 'db.imad.hasura.app.io',
+    port: '5432',
+    password: process.env.DB_PASSWORD
+};
 
 var articles={
     'article-one':{
@@ -88,6 +96,20 @@ return HTMLtemplate;
 }
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
+var pool = new Pool(config);
+app.get('/test-db', function (req, res) {
+ //Sending database request for connection
+ pool.query('select * from test', function (err,result){
+     if(err){
+        res.status(500).send(err,tostring());
+     }
+    else
+    {
+        res.send(JSON.stringify(result));
+    }
+ } );
+ 
 });
 var counter=0;
 app.get('/counter', function (req, res) {
