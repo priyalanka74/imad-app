@@ -10,7 +10,7 @@ var config = {
     database: 'supriyat',
     host: 'db.imad.hasura.app.io',
     port: '80',
-    password: process.env.DB_PASSWORD
+    password: process.env.DB_PASSWORD,
 };
 
 var articles={
