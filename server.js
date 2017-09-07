@@ -4,7 +4,7 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
-var pool = require('pg').pool;
+var Pool = require('pg').Pool;
 var config = {
     user: 'supriyat',
     database: 'supriyat',
@@ -97,7 +97,7 @@ return HTMLtemplate;
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-var pool = new pool(config);
+var pool = new Pool(config);
 app.get('/test-db', function (req, res) {
  //Sending database request for connection
  pool.query('select * from test', function (err,result){
